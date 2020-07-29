@@ -1,15 +1,15 @@
 ﻿# Logs con Serilog y Loki
 
-El proyecto genera en cada endpoint un estatus http (200, 400, 500) con random y los guarda en Loki.
+El proyecto genera en cada método un estatus http (200, 400, 500) con random, el cual genera un log con [Serilog](https://serilog.net/) y los guarda en [Loki](https://grafana.com/oss/loki/).
 
-Metodo | Url
---- |---
-GET | http://localhost:5000/User
-POST | http://localhost:5000/User
-GET | http://localhost:5000/User/{id}
-DELETE | http://localhost:5000/User/{id}
+Método | Url | Descripción
+--- |--- | ---
+GET | http://localhost:5000/User | Lista todos los usuarios
+POST | http://localhost:5000/User | Crea un usuario
+GET | http://localhost:5000/User/{id} | Lista un usuario
+DELETE | http://localhost:5000/User/{id} | Elimina un usuario
 
-modelo para crear un nuevo usuario
+Modelo para crear un nuevo usuario
 
 ``` json
 {
@@ -18,13 +18,13 @@ modelo para crear un nuevo usuario
 }
 ```
 
-iniciar el proyecto
+Iniciar el proyecto, es requerido tener instalado [Docker](https://docs.docker.com/get-docker/)
 
 ``` bash
 docker-compose up -d
 ```
 
-Ingresar a Grafana en http://localhost:3000 
+Ingresar a [Grafana](https://grafana.com/grafana/) en http://localhost:3000 
 
 Username | Password
 --- | ---
